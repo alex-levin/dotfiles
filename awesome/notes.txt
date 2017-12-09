@@ -1,0 +1,6 @@
+pacman -S awesome
+yaourt -S lain-git
+$ mkdir -p ~/.config/awesome/
+$ cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
+$ cp /usr/share/awesome/themes ~/.config/awesome/themes -r
+theme.lua is in .config/awesome/themes/zenburn/
