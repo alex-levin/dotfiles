@@ -13,8 +13,6 @@ Enter dotfiles in Repository Name.
 
 $ mkdir -p github/dotfiles/awesome
 
-$ ln -s ~/.xinitrc ~/github/dotfiles/.xinitrc
-
 *********************
 *      Awesome      *
 *********************
@@ -24,20 +22,21 @@ $ mkdir -p ~/.config/awesome/
 $ cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
 $ cp /usr/share/awesome/themes ~/.config/awesome/themes -r
 
-$ ln -s ~/.config/awesome/rc.lua ~/github/dotfiles/awesome/rc.lua
-$ ln -s ~/.config/awesome/themes/zenburn/theme.lua ~/github/dotfiles/awesome/theme.lua
+*********************************************
+*  Copy files to the local repository       *
+*********************************************
+$ cp ~/.xinitrc ~/github/dotfiles/.xinitrc
+$ cp ~/.config/awesome/rc.lua ~/github/dotfiles/awesome/rc.lua
+$ cp ~/.config/awesome/themes/zenburn/theme.lua ~/github/dotfiles/awesome/theme.lua
+
 
 *********************
-* Commit            *
+* Commit to Github  *
 *********************
 $ cd github/dotfiles
 $ git init
+$ git remote add origin https://github.com/alex-levin/dotfiles.git
 $ touch Readme.txt
 $ git add .
 $ git commit -m "Add Readme.txt"
-$ git remote add origin https://github.com/alex-levin/dotfiles.git
 $ git push -u origin master
-Username for 'https://github.com': alex-levin
-Password for 'https://alex-levin@github.com':
-[alex@ideapad]: ~/github/dotfiles>$
-
