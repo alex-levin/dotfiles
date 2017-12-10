@@ -351,12 +351,12 @@ globalkeys = gears.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),        
-	-- Brightness
+	-- >>> Brightness
 	awful.key({ }, "XF86MonBrightnessDown", function ()
 		awful.util.spawn("xbacklight -dec 5") end),
 	awful.key({ }, "XF86MonBrightnessUp", function ()
 		awful.util.spawn("xbacklight -inc 5") end),
-	-- Volume	
+	-- >>> Volume	
 	awful.key({ }, "XF86AudioRaiseVolume", function ()
 		awful.util.spawn("amixer set Master 9%+") end),
 	awful.key({ }, "XF86AudioLowerVolume", function ()
