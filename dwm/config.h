@@ -61,7 +61,6 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *custom_dmenucmd[] = { "/home/alex/dwm_custom_dmenu", NULL };
 
 static const char *termcmd[]  = { "xfce4-terminal", NULL };
 /* Sound */
@@ -71,6 +70,9 @@ static const char *pulsedown[] 	= { "amixer", "-q", "sset", "Master", "1%-", NUL
 static const char *cmdbrightnessup[]  	= { "xbacklight", "-inc", "2", NULL };
 static const char *cmdbrightnessdown[]  = { "xbacklight", "-dec", "2", NULL };
 
+/* AUR mygtkmenu drop-down */
+static const char *mymenucmd[]  = { "/home/alex/github/dotfiles/dwm/run_mygtkmenu.sh", NULL };
+       
 /* Brightness keys */
 /* Run $ xev -event keyboard, press F12, will get keysym 0x1008ff02, XF86MonBrightnessUp) */
 /* Run $ xev -event keyboard, press F11, will get keysym 0x1008ff03, XF86MonBrightnessDown) */
@@ -80,7 +82,6 @@ static const char *cmdbrightnessdown[]  = { "xbacklight", "-dec", "2", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_o,      spawn,          {.v = custom_dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -119,6 +120,7 @@ static Key keys[] = {
     /* Brightness */
 	{ 0,                            KEY_BRIGHTNESS_UP, spawn,  {.v = cmdbrightnessup } },
 	{ 0,                            KEY_BRIGHTNESS_DOWN, spawn, {.v = cmdbrightnessdown } },
+
 };
 
 /* button definitions */
@@ -136,5 +138,7 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+	{ ClkStatusText,        0,              Button3,        spawn,          {.v = mymenucmd } },
+	{ ClkRootWin,           0,              Button3,        spawn,          {.v = mymenucmd } },
 };
 

@@ -1,2 +1,0 @@
-#!/bin/sh
-cat ~/.dmenu_path | dmenu -b -f -l 50 -fn "DejaVu Sans Mono:size=12" "$@" | ${SHELL:-"/bin/sh"} &
