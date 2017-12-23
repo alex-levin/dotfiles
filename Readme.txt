@@ -40,3 +40,8 @@ $ touch Readme.txt
 $ git add .
 $ git commit -m "Add Readme.txt"
 $ git push -u origin master
+
+*********************
+* dwm               *
+*********************
+Super-o to start custom menu
