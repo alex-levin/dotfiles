@@ -70,6 +70,10 @@ item = _Geany
 cmd = geany
 icon = /usr/share/icons/hicolor/16x16/apps/geany.png
 
+item = _Screenshot
+cmd = gnome-screenshot -i
+icon = /home/alex/github/dotfiles/dwm/icons/applets-screenshooter.png
+
 item = _Ristretto
 cmd = ristretto
 icon = /usr/share/icons/hicolor/16x16/apps/ristretto.png
