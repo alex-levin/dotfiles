@@ -16,13 +16,15 @@ xrdb -merge ~/.Xresources
 
 exec nm-applet &
 
+exec redshift-gtk &
+
 # exec enlightenment_start
 # exec i3
 # exec mate-session
 # exec xmonad
 # exec startlxqt
 # exec startlxde
-exec awesome
+# exec awesome
 # exec bspwm
 # exec gnome-session
 # exec gnome-session --session=gnome-classic
@@ -34,5 +36,5 @@ exec awesome
 # exec pekwm
 # exec catwm
 
-# ~/dwm_status &
-# exec dwm
+~/dwm_status &
+exec dwm

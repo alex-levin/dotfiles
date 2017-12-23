@@ -15,6 +15,5 @@ export PS1="\[\033[38;5;12m\][\[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\
 [ -e "$DIR_COLORS" ] || DIR_COLORS=""
 eval "`dircolors -b $DIR_COLORS`"
 
-export EDITOR=vim
+export EDITOR=nano
 archey3
-redshift-gtk &
