@@ -69,9 +69,6 @@ static const char *pulsedown[] 	= { "amixer", "-q", "sset", "Master", "1%-", NUL
 /* Brightness */
 static const char *cmdbrightnessup[]  	= { "xbacklight", "-inc", "2", NULL };
 static const char *cmdbrightnessdown[]  = { "xbacklight", "-dec", "2", NULL };
-
-/* AUR mygtkmenu drop-down */
-static const char *mymenucmd[]  = { "/home/alex/github/dotfiles/dwm/run_mygtkmenu.sh", NULL };
        
 /* Brightness keys */
 /* Run $ xev -event keyboard, press F12, will get keysym 0x1008ff02, XF86MonBrightnessUp) */
@@ -82,6 +79,7 @@ static const char *mymenucmd[]  = { "/home/alex/github/dotfiles/dwm/run_mygtkmen
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_o,      spawn,          SHCMD("mygtkmenu /home/alex/github/dotfiles/dwm/MyMenu.txt") },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -138,7 +136,8 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
-	{ ClkStatusText,        0,              Button3,        spawn,          {.v = mymenucmd } },
-	{ ClkRootWin,           0,              Button3,        spawn,          {.v = mymenucmd } },
+	{ ClkStatusText,        0,              Button3,        spawn,          SHCMD("mygtkmenu /home/alex/github/dotfiles/dwm/MyMenu.txt") },
+	{ ClkRootWin,           0,              Button3,        spawn,          SHCMD("mygtkmenu /home/alex/github/dotfiles/dwm/MyMenu.txt") },
+                                                                        
 };
 

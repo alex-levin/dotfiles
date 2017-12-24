@@ -58,6 +58,10 @@
 
 iconsize = 25
 
+item = _Catfish
+cmd = catfish
+icon = /usr/share/icons/hicolor/scalable/apps/catfish.svg
+
 item = _Chromium
 cmd = chromium
 icon = /usr/share/icons/hicolor/16x16/apps/chromium.png
@@ -70,13 +74,17 @@ item = _Geany
 cmd = geany
 icon = /usr/share/icons/hicolor/16x16/apps/geany.png
 
-item = _Screenshot
-cmd = gnome-screenshot -i
-icon = /home/alex/github/dotfiles/dwm/icons/applets-screenshooter.png
-
 item = _Ristretto
 cmd = ristretto
 icon = /usr/share/icons/hicolor/16x16/apps/ristretto.png
+
+item = _Scite
+cmd = scite
+icon = /usr/share/scite/SciTEIco.png
+
+item = _Screenshot
+cmd = gnome-screenshot -i
+icon = /home/alex/github/dotfiles/dwm/icons/applets-screenshooter.png
 
 item = _Thunar
 cmd = thunar
