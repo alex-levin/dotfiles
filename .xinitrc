@@ -24,7 +24,7 @@ exec redshift-gtk &
 # exec xmonad
 # exec startlxqt
 # exec startlxde
-# exec awesome
+exec awesome
 # exec bspwm
 # exec gnome-session
 # exec gnome-session --session=gnome-classic
@@ -36,6 +36,5 @@ exec redshift-gtk &
 # exec pekwm
 # exec catwm
 
-exec ~/github/dotfiles/dwm/dwm_status.sh &
-
-exec dwm
+# exec ~/github/dotfiles/dwm/dwm_status.sh &
+# exec dwm

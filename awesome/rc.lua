@@ -107,7 +107,17 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "Favorites", {
+                                            { "Catfish", "catfish", "/usr/share/icons/hicolor/scalable/apps/catfish.svg" },
+                                            { "Evince", "evince", "/usr/share/icons/hicolor/16x16/apps/evince.png" },
+                                            { "Geany", "scite", "/usr/share/icons/hicolor/16x16/apps/geany.png" },
+                                            { "Chromium", "chromium", "/usr/share/icons/hicolor/16x16/apps/chromium.png" },
+                                            { "Ristretto", "ristretto", "/usr/share/icons/hicolor/16x16/apps/ristretto.png" },
+                                            { "Scite", "scite", "/usr/share/scite/SciTEIco.png" },
+                                            { "Screenshot", "gnome-screenshot -i", "/home/alex/github/dotfiles/dwm/icons/applets-screenshooter.png" },
+                                            { "Thunar", "thunar", "/usr/share/icons/hicolor/16x16/apps/Thunar.png" }
+                                        }
+                                    }
                                   }
                         })
 
@@ -353,9 +363,9 @@ globalkeys = gears.table.join(
               {description = "show the menubar", group = "launcher"}),        
 	-- >>> Brightness
 	awful.key({ }, "XF86MonBrightnessDown", function ()
-		awful.util.spawn("xbacklight -dec 5") end),
+		awful.util.spawn("xbacklight -dec 1") end),
 	awful.key({ }, "XF86MonBrightnessUp", function ()
-		awful.util.spawn("xbacklight -inc 5") end),
+		awful.util.spawn("xbacklight -inc 1") end),
 	-- >>> Volume	
 	awful.key({ }, "XF86AudioRaiseVolume", function ()
 		awful.util.spawn("amixer set Master 9%+") end),

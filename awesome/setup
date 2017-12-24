@@ -1,0 +1,7 @@
+#!/bin/sh
+
+mkdir -p ~/.config/awesome/
+cp /usr/share/awesome/themes ~/.config/awesome/themes -r
+rm ~/.config/awesome/themes/zenburn/theme.lua
+ln -s ~/github/dotfiles/awesome/rc.lua ~/.config/awesome/rc.lua
+ln -s ~/github/dotfiles/awesome/theme.lua ~/.config/awesome/themes/zenburn/theme.lua
