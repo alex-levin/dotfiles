@@ -108,14 +108,15 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "Favorites", {
+                                            { "Atom", "atom", "/usr/share/icons/hicolor/16x16/apps/atom.png" },
                                             { "Catfish", "catfish", "/usr/share/icons/hicolor/scalable/apps/catfish.svg" },
                                             { "Evince", "evince", "/usr/share/icons/hicolor/16x16/apps/evince.png" },
                                             { "Geany", "scite", "/usr/share/icons/hicolor/16x16/apps/geany.png" },
                                             { "Chromium", "chromium", "/usr/share/icons/hicolor/16x16/apps/chromium.png" },
                                             { "Ristretto", "ristretto", "/usr/share/icons/hicolor/16x16/apps/ristretto.png" },
-                                            { "Scite", "scite", "/usr/share/scite/SciTEIco.png" },
                                             { "Screenshot", "gnome-screenshot -i", "/home/alex/github/dotfiles/dwm/icons/applets-screenshooter.png" },
-                                            { "Thunar", "thunar", "/usr/share/icons/hicolor/16x16/apps/Thunar.png" }
+                                            { "Thunar", "thunar", "/usr/share/icons/hicolor/16x16/apps/Thunar.png" },
+                                            { "VS Code", "code", "/opt/visual-studio-code/resources/app/resources/linux/code.png" }
                                         }
                                     }
                                   }
@@ -137,7 +138,7 @@ mytextclock = wibox.widget.textclock()
 
 --- >>> Battery status widget
 --- https://github.com/lcpz/lain/wiki/bat
-local mybattery = lain.widget.bat({    
+local mybattery = lain.widget.bat({
   settings = function()
      widget:set_text(" " .. bat_now.perc .. "% " .. bat_now.status .. " ")
      widget:set_font('sans 12')
@@ -243,10 +244,10 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
-            
+
             --- >>> Adding lain's battery widget
             mybattery,
-            
+
             mytextclock,
             s.mylayoutbox,
         },
@@ -345,7 +346,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
+    awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",
@@ -360,17 +361,17 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),        
+              {description = "show the menubar", group = "launcher"}),
 	-- >>> Brightness
 	awful.key({ }, "XF86MonBrightnessDown", function ()
 		awful.util.spawn("xbacklight -dec 1") end),
 	awful.key({ }, "XF86MonBrightnessUp", function ()
 		awful.util.spawn("xbacklight -inc 1") end),
-	-- >>> Volume	
+	-- >>> Volume
 	awful.key({ }, "XF86AudioRaiseVolume", function ()
 		awful.util.spawn("amixer set Master 9%+") end),
 	awful.key({ }, "XF86AudioLowerVolume", function ()
-		awful.util.spawn("amixer set Master 9%-") end)          
+		awful.util.spawn("amixer set Master 9%-") end)
 )
 
 clientkeys = gears.table.join(
@@ -415,7 +416,7 @@ clientkeys = gears.table.join(
             c:raise()
         end ,
         {description = "(un)maximize horizontally", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "y", 
+    awful.key({ modkey, "Shift"   }, "y",
         awful.placement.centered,
         {description = "centers floating window", group = "client"})
 )
