@@ -1,10 +1,12 @@
 #!/bin/sh
 
 cd ~
+mkdir -p ~/.config/fontconfig
 chmod + x /home/alex/github/dotfiles/.xinitrc
 chmod + x /home/alex/github/dotfiles/.bashrc
 chmod + x /home/alex/github/dotfiles/set_monitor
 ln -s ~/github/dotfiles/.xinitrc ~/.xinitrc
 ln -s ~/github/dotfiles/.bashrc ~/.bashrc
 ln -s ~/github/dotfiles/redshift.conf ~/.config/redshift.conf
+ln -s ~/github/dotfiles/fonts.conf ~/.config/fontconfig/fonts.conf
 
