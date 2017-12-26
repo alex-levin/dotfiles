@@ -15,7 +15,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 require("awful.hotkeys_popup.keys")
 
 --->>> lain
-local lain = require("lain")
+-- local lain = require("lain")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -111,7 +111,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                             { "Atom", "atom", "/usr/share/icons/hicolor/16x16/apps/atom.png" },
                                             { "Catfish", "catfish", "/usr/share/icons/hicolor/scalable/apps/catfish.svg" },
                                             { "Evince", "evince", "/usr/share/icons/hicolor/16x16/apps/evince.png" },
-                                            { "Geany", "scite", "/usr/share/icons/hicolor/16x16/apps/geany.png" },
+                                            { "Geany", "geany", "/usr/share/icons/hicolor/16x16/apps/geany.png" },
                                             { "Chromium", "chromium", "/usr/share/icons/hicolor/16x16/apps/chromium.png" },
                                             { "Ristretto", "ristretto", "/usr/share/icons/hicolor/16x16/apps/ristretto.png" },
                                             { "Screenshot", "gnome-screenshot -i", "/home/alex/github/dotfiles/dwm/icons/applets-screenshooter.png" },
@@ -138,12 +138,12 @@ mytextclock = wibox.widget.textclock()
 
 --- >>> Battery status widget
 --- https://github.com/lcpz/lain/wiki/bat
-local mybattery = lain.widget.bat({
-  settings = function()
-     widget:set_text(" " .. bat_now.perc .. "% " .. bat_now.status .. " ")
-     widget:set_font('sans 12')
-  end
-})
+--local mybattery = lain.widget.bat({
+--  settings = function()
+--     widget:set_text(" " .. bat_now.perc .. "% " .. bat_now.status .. " ")
+--     widget:set_font('sans 12')
+--  end
+--})
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -244,10 +244,8 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
-
             --- >>> Adding lain's battery widget
-            mybattery,
-
+--            mybattery,
             mytextclock,
             s.mylayoutbox,
         },
